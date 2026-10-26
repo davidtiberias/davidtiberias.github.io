@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Routing | David Tiberias</title>
+  <script>
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    var pathSegmentsToKeep = 0;
+    var l = window.location;
+    var pathname = l.pathname;
+
+    // Determine target sub-application
+    if (pathname.startsWith('/davidtiberias')) {
+      // Redirect to davidtiberias with SPA query
+      var rest = pathname.slice('/davidtiberias'.length);
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        '/davidtiberias/?p=' + encodeURIComponent(rest + l.search) + l.hash
+      );
+    } else if (pathname.startsWith('/tiberias')) {
+      // Redirect to tiberias with SPA query
+      var rest = pathname.slice('/tiberias'.length);
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        '/tiberias/?p=' + encodeURIComponent(rest + l.search) + l.hash
+      );
+    } else {
+      // Fallback redirect to /home
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/home'
+      );
+    }
+  </script>
+</head>
+<body style="background:#09090b;color:#a1a1aa;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
+  <p>Navigating to destination...</p>
+</body>
+</html>
